@@ -1,0 +1,82 @@
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #0f172a;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+#game-wrap {
+  position: relative;
+  line-height: 0;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#app {
+  line-height: 0;
+}
+
+#hint {
+  color: #cbd5e1;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* On-screen controls for touch devices (phones/emulators). They sit on top
+   of the canvas at all times — harmless on desktop, essential on mobile
+   where there's no keyboard. */
+#touch-controls {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 16px 16px;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+#touch-left-group,
+#touch-right-group {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  pointer-events: auto;
+}
+
+.touch-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+}
+
+.touch-btn:active {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.touch-btn-big {
+  width: 68px;
+  height: 68px;
+  font-size: 26px;
+}
