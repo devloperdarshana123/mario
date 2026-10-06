@@ -1597,6 +1597,12 @@ const config = {
   width: 800,
   height: WORLD_HEIGHT,
   parent: "app",
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+    width: 800,
+    height: WORLD_HEIGHT,
+  },
   physics: {
     default: "arcade",
     arcade: { gravity: { y: 1000 }, debug: false },

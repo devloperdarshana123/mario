@@ -2,9 +2,16 @@
   color-scheme: light;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,6 +23,8 @@ body {
 
 #game-wrap {
   position: relative;
+  width: min(100vw, calc((100dvh - 40px) * 800 / 480));
+  aspect-ratio: 800 / 480;
   line-height: 0;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
@@ -24,6 +33,12 @@ body {
 
 #app {
   line-height: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#app canvas {
+  display: block;
 }
 
 #hint {
@@ -79,4 +94,32 @@ body {
   width: 68px;
   height: 68px;
   font-size: 26px;
+}
+
+/* Phones / short viewports: use the whole screen, smaller buttons. */
+@media (max-width: 700px), (max-height: 500px) {
+  #hint {
+    display: none;
+  }
+
+  #game-wrap {
+    width: min(100vw, calc(100dvh * 800 / 480));
+    border-radius: 0;
+  }
+
+  #touch-controls {
+    padding: 0 10px 10px;
+  }
+
+  .touch-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .touch-btn-big {
+    width: 58px;
+    height: 58px;
+    font-size: 22px;
+  }
 }
